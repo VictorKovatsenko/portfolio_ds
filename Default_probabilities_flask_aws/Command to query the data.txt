@@ -1,0 +1,1 @@
+curl -X GET "http://klarna-test.us-east-2.elasticbeanstalk.com/api" -H "Content-Type: application/json" --data @json.txt
