@@ -95,4 +95,3 @@ def app_body():
 
         st.markdown(get_table_download_link_excel(df, state, city, zip, property_type), unsafe_allow_html=True)
 
-        
