@@ -277,7 +277,7 @@ def plot_map(df, state, city, zip, value, sqft, property_type):
 
         targets = targets[idx - 5: idx + 6]
         feets = feets[idx_2 - 5: idx +6]
-        df_bar = df_bar.loc[(df_bar['target'].isin(targets)) | (df_bar['sqft'].isin(feets))]
+        df_bar = df_bar.loc[((df_bar['target'].isin(targets)) | (df_bar['sqft'].isin(feets)))]
 
     df_bar = df_bar[['propertyType', 'state', 'city', 'zipcode', 'sqft', 'beds', 'baths', 'target']].reset_index(drop=True)
     df_bar[['sqft', 'beds', 'baths', 'target']] = df_bar[['sqft', 'beds', 'baths', 'target']].apply(lambda x: round(x, 0))
