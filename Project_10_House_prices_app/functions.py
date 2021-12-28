@@ -36,7 +36,7 @@ def df_preparation(path):
 
 # Parameters
 
-def get_transformed_params(df, property_type, baths, fireplace, city, sqft, zip, beds, state, pool, heating, parking,
+def get_transformed_params(path, df, property_type, baths, fireplace, city, sqft, zip, beds, state, pool, heating, parking,
                            status='FOR SALE'):
     house = pd.DataFrame(columns=['status', 'propertyType', 'baths', 'fireplace', 'city', 'sqft', 'zipcode', 'beds',
                                   'state', 'PrivatePool', 'Heating', 'Parking'],
@@ -64,7 +64,7 @@ def get_transformed_params(df, property_type, baths, fireplace, city, sqft, zip,
     house['Heating'] = house['Heating'].apply(lambda x: 'OTHER' if x == 'No info' else x)
 
     # UnPickle encoding
-    enc_ord = pickle.load(open('ord_enc.pkl', 'rb'))
+    enc_ord = pickle.load(open(f'{path}ord_enc.pkl', 'rb'))
     house['zipcode'] = house['zipcode'].astype('str')
     house[['zipcode', 'city', 'state', 'propertyType', 'Heating', 'status']] = enc_ord.transform(
         house[['zipcode', 'city', 'state', 'propertyType', 'Heating', 'status']])
@@ -78,14 +78,14 @@ def get_transformed_params(df, property_type, baths, fireplace, city, sqft, zip,
 
     # Data normalization
     numeric = ['baths', 'sqft', 'beds', 'max_rating', 'Price_sqft_state', 'Price_sqft_city', 'Price_sqft_zip']
-    scaler = pickle.load(open('robust_scaler.pkl', 'rb'))
+    scaler = pickle.load(open(f'{path}robust_scaler.pkl', 'rb'))
     house[numeric] = scaler.transform(house[numeric])
 
     return house
 
 
-def get_estimation(house):
-    model = pickle.load(open('best_model.pkl', 'rb'))
+def get_estimation(path, house):
+    model = pickle.load(open(f'{path}best_model.pkl', 'rb'))
     value = int(np.exp(model.predict(house))[0])
     return value
 

@@ -16,9 +16,11 @@ path_2 = ''
 
 try:
     df, states, types, heatings, states_cities, cities_zip = df_preparation(path_1)
+    path = path_1
 
 except:
     df, states, types, heatings, states_cities, cities_zip = df_preparation(path_2)
+    path = path_2
 
 
 def app_body():
@@ -66,8 +68,8 @@ def app_body():
     pressed = left_column.button('Get the price!')
 
     if pressed:
-        house = get_transformed_params(df, property_type, baths, fireplace, city, sqft, zip, beds, state, pool, heating, parking)
-        value = get_estimation(house)
+        house = get_transformed_params(path, df, property_type, baths, fireplace, city, sqft, zip, beds, state, pool, heating, parking)
+        value = get_estimation(path, house)
         left_column, right_column = st.columns([2, 10])
         text_value = f'<p style="font-family:sans-serif; color:#B64004; font-size: 35px;">${value:,d}</p> '
         left_column.markdown(text_value, unsafe_allow_html=True)
