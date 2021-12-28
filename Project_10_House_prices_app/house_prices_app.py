@@ -32,7 +32,7 @@ def app_body():
     city = st.sidebar.selectbox(label='Select city:', index=140, options=["No city/other"] + states_cities[state])
     if city == 'No city/other':
         zip = st.sidebar.selectbox(label='Select zip:', index=0, options=["No zip/other"])
-        sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1500)
+        sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1100)
     else:
         zip = st.sidebar.selectbox(label='Select zip:', options=["No zip/other"] + cities_zip[city])
         sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1100)
