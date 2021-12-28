@@ -5,7 +5,8 @@ import pandas as pd
 from datetime import datetime
 
 # Local imports
-from functions import df_preparation, get_transformed_params,  get_estimation, bar_chart_types, bar_chart_state_city, plot_map, get_table_download_link_excel
+from functions import df_preparation, get_transformed_params,  get_estimation, bar_chart_types, bar_chart_state_city, \
+    plot_map, get_table_download_link_excel, to_excel
 
 warnings.filterwarnings("ignore")
 
@@ -90,7 +91,7 @@ def app_body():
 
         st.markdown('##### **See similar properties on table/map (map if I have time to do):**')
 
-        df_2 = plot_map(df, state, city, zip, value, property_type)
+        df_2 = plot_map(df, state, city, zip, value, sqft, property_type)
         st.write(df_2)
 
         st.markdown(get_table_download_link_excel(df_2, state, city, zip, property_type), unsafe_allow_html=True)
