@@ -9,8 +9,6 @@ import plotly.graph_objects as go
 import base64
 
 from plotly.subplots import make_subplots
-from matplotlib import cm
-from matplotlib.colors import ListedColormap
 from io import BytesIO
 
 warnings.filterwarnings("ignore")
