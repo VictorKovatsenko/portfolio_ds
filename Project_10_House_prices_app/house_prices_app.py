@@ -35,7 +35,7 @@ def app_body():
         sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1500)
     else:
         zip = st.sidebar.selectbox(label='Select zip:', options=["No zip/other"] + cities_zip[city])
-        sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1500)
+        sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1100)
 
     more_params = st.sidebar.checkbox('I have additional parameters to enter (increases price accuracy)', value=False)
 
