@@ -9,7 +9,16 @@ from functions import df_preparation, get_transformed_params,  get_estimation, b
 
 warnings.filterwarnings("ignore")
 
-df, states, types, heatings, states_cities, cities_zip = df_preparation()
+# Path for streamlit
+path_1 = 'Project_10_House_prices_app/'
+# Path for local host (current folder)
+path_2 = ''
+
+try:
+    df, states, types, heatings, states_cities, cities_zip = df_preparation(path_1)
+
+except:
+    df, states, types, heatings, states_cities, cities_zip = df_preparation(path_2)
 
 
 def app_body():
