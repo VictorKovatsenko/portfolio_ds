@@ -263,6 +263,7 @@ def plot_map(df, state, city, zip, value, sqft, property_type):
     else:
         df_bar = df_bar[df_bar['state'] == state]
 
+    sqft = float(sqft)
     if len(df_bar) > 20:
         targets = df_bar['target'].to_list()
         targets.sort()
