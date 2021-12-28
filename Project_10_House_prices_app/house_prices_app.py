@@ -29,7 +29,7 @@ def app_body():
     st.sidebar.write('Mandatory fields: ')
     property_type = st.sidebar.selectbox(label='Select property type:', options=types)
     state = st.sidebar.selectbox(label='Select state:', index=29, options=states)
-    city = st.sidebar.selectbox(label='Select city:', index=140, options=["No city/other"] + states_cities[state])
+    city = st.sidebar.selectbox(label='Select city:', index=0, options=["No city/other"] + states_cities[state])
     if city == 'No city/other':
         zip = st.sidebar.selectbox(label='Select zip:', index=0, options=["No zip/other"])
         sqft = st.sidebar.text_input(label='Enter total lot/house area, sqft', value=1100)
