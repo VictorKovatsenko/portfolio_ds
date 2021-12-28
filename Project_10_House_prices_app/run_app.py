@@ -14,7 +14,7 @@ if __name__ == '__main__':
     st.set_page_config(layout='wide', page_icon=":house:", page_title='House pricing app')
 
     # Path for colab
-    path_1 = '/content/drive/MyDrive/transport_costs_app/'
+    path_1 = 'Project_10_House_prices_app/'
 
     # Path for local host (current folder)
     path_2 = ''
@@ -29,10 +29,13 @@ if __name__ == '__main__':
         password = st.text_input("Password:", value="", type='password')
 
     if hashlib.sha1(password.encode('utf-8')).hexdigest() == get_hash():
-        # try:
-        app_body()
-        # except:
-        #     print('Что за фигня!')
+        try:
+            app_body(path_1)
+        except:
+            try:
+                app_body(path_2)
+            except:
+                print('Что за фигня!')
 
 
     else:

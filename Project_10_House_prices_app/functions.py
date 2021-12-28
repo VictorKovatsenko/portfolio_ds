@@ -14,8 +14,8 @@ from io import BytesIO
 warnings.filterwarnings("ignore")
 
 
-def df_preparation():
-    df = pd.read_csv(f'data_processed.csv')
+def df_preparation(path):
+    df = pd.read_csv(f'{path}data_processed.csv')
     states = list(df.state.unique())
     types = list(df.propertyType.unique())
     heatings = list(df.Heating.unique())
