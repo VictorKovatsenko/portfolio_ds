@@ -4,7 +4,7 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import OrdinalEncoder, RobustScaler
 import catboost
-import openpyxl
+
 import pickle
 import plotly.graph_objects as go
 import base64
