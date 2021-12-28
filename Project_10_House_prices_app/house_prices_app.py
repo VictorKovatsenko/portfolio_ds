@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 
 # Local imports
-from functions import df_preparation, get_transformed_params,  get_estimation, bar_chart_types, bar_chart_state_city, plot_map
+from functions import df_preparation, get_transformed_params,  get_estimation, bar_chart_types, bar_chart_state_city, plot_map, get_table_download_link_excel
 
 warnings.filterwarnings("ignore")
 
@@ -88,10 +88,11 @@ def app_body():
         fig_2 = bar_chart_state_city(df, state, city, zip, property_type)
         right_column.plotly_chart(fig_2, use_container_width=True)
 
-        st.markdown('##### **See properties on table/map (map if I have time to do):**')
+        st.markdown('##### **See similar properties on table/map (map if I have time to do):**')
 
         df_2 = plot_map(df, state, city, zip, value, property_type)
         st.write(df_2)
 
-        # st.markdown(get_table_download_link_excel('cars_transported', df_1, month_start, year_start, month_end
-        #                                           , year_end), unsafe_allow_html=True)
+        st.markdown(get_table_download_link_excel(df, state, city, zip, property_type), unsafe_allow_html=True)
+
+        

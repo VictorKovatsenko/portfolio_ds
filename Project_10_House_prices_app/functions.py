@@ -104,15 +104,15 @@ def to_excel(df):
     return processed_data
 
 
-def get_table_download_link_excel(table_type, df, month_1, year_1, month_2, year_2):
+def get_table_download_link_excel(df, state, city, zip, property_type):
     """Generates a link allowing the data in a given panda dataframe to be downloaded as Excel file
     in:  dataframe
     out: href string
     """
     val = to_excel(df)
     b64 = base64.b64encode(val)
-    href = f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="Data_{table_type}_from_{month_1}/' \
-           f'{year_1}_to_{month_2}/{year_2}.xlsx">Download {table_type} as Excel</a> '
+    href = f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="House_prices_for_{state}_' \
+           f'{city}_to_{zip}_{property_type}.xlsx">Download table as Excel</a> '
     return href
 
 
@@ -270,7 +270,8 @@ def plot_map(df, state, city, zip, value, property_type):
         targets = targets[idx - 10: idx + 10]
         df_bar = df_bar.loc[df_bar['target'].isin(targets)]
 
-    df_bar = df_bar[['propertyType', 'state', 'city', 'zipcode', 'sqft', 'beds', 'baths', 'target']]
+    df_bar = df_bar[['propertyType', 'state', 'city', 'zipcode', 'sqft', 'beds', 'baths', 'target']].reset_index(drop=True)
+    df_bar[['sqft', 'beds', 'baths', 'target']] = df_bar[['sqft', 'beds', 'baths', 'target']].apply(lambda x: round(x, 0))
     df_bar.rename(columns={"target": "price", "propertyType": "property_type"}, inplace=True)
 
     return df_bar
