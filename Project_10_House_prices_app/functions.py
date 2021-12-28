@@ -271,7 +271,7 @@ def plot_map(df, state, city, zip, value, sqft, property_type):
         feets.sort()
 
         array = np.asarray(targets)
-        idx = (np.abs(array - value)).argmin() # min closest value
+        idx = (np.abs(array - value)).argmin()   # min closest value
         array_2 = np.asarray(feets)
         idx_2 = (np.abs(array_2 - sqft)).argmin()
 
@@ -280,7 +280,7 @@ def plot_map(df, state, city, zip, value, sqft, property_type):
         df_bar = df_bar.loc[((df_bar['target'].isin(targets)) | (df_bar['sqft'].isin(feets)))]
 
     df_bar = df_bar[['propertyType', 'state', 'city', 'zipcode', 'sqft', 'beds', 'baths', 'target']].reset_index(drop=True)
-    df_bar[['sqft', 'beds', 'baths', 'target']] = df_bar[['sqft', 'beds', 'baths', 'target']].apply(lambda x: round(x, 0))
+    df_bar[['sqft', 'beds', 'baths', 'target']] = df_bar[['sqft', 'beds', 'baths', 'target']].astype(int)
     df_bar.rename(columns={"target": "price", "propertyType": "property_type"}, inplace=True)
 
     return df_bar
