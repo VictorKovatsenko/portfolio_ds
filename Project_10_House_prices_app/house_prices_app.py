@@ -93,5 +93,5 @@ def app_body():
         df_2 = plot_map(df, state, city, zip, value, property_type)
         st.write(df_2)
 
-        st.markdown(get_table_download_link_excel(df, state, city, zip, property_type), unsafe_allow_html=True)
+        st.markdown(get_table_download_link_excel(df_2, state, city, zip, property_type), unsafe_allow_html=True)
 
