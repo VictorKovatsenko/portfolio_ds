@@ -3,13 +3,13 @@ import pandas as pd
 import numpy as np
 # import sklearn
 # from sklearn.preprocessing import OrdinalEncoder, RobustScaler
-import catboost
+# import catboost
 
 import pickle
 import plotly.graph_objects as go
 import base64
 
-from plotly.subplots import make_subplots
+# from plotly.subplots import make_subplots
 from io import BytesIO
 
 warnings.filterwarnings("ignore")
