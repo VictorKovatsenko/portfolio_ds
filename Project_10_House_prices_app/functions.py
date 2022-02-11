@@ -1,7 +1,7 @@
 import warnings
 import pandas as pd
 import numpy as np
-import sklearn
+
 from sklearn.preprocessing import OrdinalEncoder, RobustScaler
 import catboost
 
