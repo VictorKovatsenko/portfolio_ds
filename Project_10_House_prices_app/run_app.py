@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     st.markdown('### Using this app you can get the price estimation for various properties types')
 
-    with st.sidebar.expander("Please enter password here:"):
+    with st.sidebar.expander("Copy paste password 'Hi_pricing_app' here:"):
         password = st.text_input("Password:", value="", type='password')
 
     if hashlib.sha1(password.encode('utf-8')).hexdigest() == get_hash():
