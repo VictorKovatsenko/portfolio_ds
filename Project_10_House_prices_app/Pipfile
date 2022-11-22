@@ -10,6 +10,13 @@ numpy = "==1.21.5"
 streamlit = "==1.11.1"
 plotly = "==5.5.0"
 catboost = "==1.0.3"
+jupyter = "*"
+seaborn = "*"
+tensorflow = "*"
+pytorch-tabnet = "*"
+pandas-profiling = "*"
+keras = "*"
+xgboost = "*"
 
 [dev-packages]
 
