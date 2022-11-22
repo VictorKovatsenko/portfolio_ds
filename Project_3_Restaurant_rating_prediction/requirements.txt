@@ -78,13 +78,13 @@ itsdangerous==1.1.0
 jdcal==1.4.1
 jedi==0.14.1
 Jinja2==2.11.1
-joblib==0.14.1
+joblib==1.2.0
 json5==0.9.1
 jsonschema==3.2.0
 jupyter==1.0.0
 jupyter-client==5.3.4
 jupyter-console==6.1.0
-jupyter-core==4.6.1
+jupyter-core==4.11.2
 jupyterlab==1.2.6
 jupyterlab-server==1.0.6
 keyring==21.1.0
@@ -108,7 +108,7 @@ mpmath==1.1.0
 msgpack==0.6.1
 multipledispatch==0.6.0
 navigator-updater==0.2.1
-nbconvert==5.6.1
+nbconvert==6.5.1
 nbformat==5.0.4
 networkx==2.4
 nltk==3.6.6
@@ -133,7 +133,7 @@ patsy==0.5.1
 pep8==1.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==9.0.1
+Pillow==9.3.0
 pkginfo==1.5.0.1
 plotly==4.9.0
 pluggy==0.13.1
