@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+pandas = "*"
+numpy = "*"
+plotly = "*"
+joblib = "*"
+shap = "*"
+matplotlib = "*"
+seaborn = "*"
+xgboost = "*"
+bayesian-optimization = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
